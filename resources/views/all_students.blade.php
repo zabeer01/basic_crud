@@ -38,7 +38,7 @@
 
                                 <input type="hidden" value="{{ $std ? $std->id : '' }}" name="id">
 
-                                <button  type="submit" class="btn btn-dark edit-btn" >
+                                <button  type="submit" class="btn btn-danger edit-btn" >
 
                                     {{-- href="{{ route('edit_students', ['id' => $std->id]) }}" --}}
 
