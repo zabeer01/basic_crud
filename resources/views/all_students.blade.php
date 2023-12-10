@@ -32,8 +32,19 @@
                                 {{-- href="{{ route('edit_students', ['id' => $std->id]) }}" --}}
 
                                 Edit
-
                             </a>
+                            <form method="POST" action="{{ route('student_soft_delete') }}" enctype="multipart/form-data">
+                                @csrf
+
+                                <input type="hidden" value="{{ $std ? $std->id : '' }}" name="id">
+
+                                <button  type="submit" class="btn btn-dark edit-btn" >
+
+                                    {{-- href="{{ route('edit_students', ['id' => $std->id]) }}" --}}
+
+                                    delete
+                                </button>
+                            </form>
 
                         </td>
 

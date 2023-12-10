@@ -71,4 +71,29 @@ class StudentsController extends Controller
         // Pass the details to the view for editing
         return view('edit_students', $dt);
     }
+     
+   public function StudentSoftDelete(Request $request){
+    $dt = Students::find($request->id);
+
+    $dt->trash = 1;
+
+    // Handle other image uploads or file processing
+    if ($dt->save()) {
+        return response()->json([
+            'error' => false,
+            'msg' => 'Success',
+            'back' => url('trash/tables/all-students')
+        ]);
+        //$request->session()->flash('success', 'Home Page Settings created successfully.');
+        //return redirect(url('home/page/settings'));
+        // or using route name if applicable:
+        // return redirect()->route('route.name'); // Replace 'route.name' with your route name
+    }
+
+    return response()->json([
+        'error' => true,
+        'msg' => 'Error: Unable to save data',
+        'load' => false
+    ]);
+    }
 }
