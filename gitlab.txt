@@ -1,0 +1,20 @@
+after creation on the first time
+edit or add new file will be done from git status.. 
+1. git status
+
+git status
+
+2. add the git add path(copied from status) 
+
+git add 
+
+3. commit
+
+git commit -m ""
+
+4. push
+git push origin main
+
+
+video link for gitlab to github
+https://www.youtube.com/watch?v=E4Y6A1HplWc
