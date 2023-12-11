@@ -18,7 +18,7 @@ use App\Http\Controllers\StudentsController;
 
 
 Route::post('/students/store', [StudentsController::class, 'StoreStudents'])->name('store_students');
-Route::get('/students/all-students', [StudentsController::class, 'AllStudents'])->name('all_students');
+Route::get('/', [StudentsController::class, 'AllStudents'])->name('all_students');
 Route::get('/students/add-students', [StudentsController::class, 'AddStudents'])->name('add_students');
 Route::get('/students/edit-students/{id}', [StudentsController::class, 'EditStudents'])->name('edit_students'); 
 Route::post('/students/soft/delete/students', [StudentsController::class, 'StudentSoftDelete'])->name('student_soft_delete'); 
